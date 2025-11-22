@@ -1,0 +1,24 @@
+{
+    "name": "hesamriahi/customers-club",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hesamriahi\\CustomersClub\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hesamriahi\\CustomersClub\\CustomersClubServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Hesam Riahi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
