@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers_club_score_level_clients', function (Blueprint $table) {
+        Schema::connection(config('customers-club.connection_name'))->create('customers_club_score_level_clients', function (Blueprint $table) {
             $table->id();
 
             $table->morphs('client');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers_club_score_level_clients');
+        Schema::connection(config('customers-club.connection_name'))->dropIfExists('customers_club_score_level_clients');
     }
 };

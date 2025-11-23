@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers_club_levels', function (Blueprint $table) {
+        Schema::connection(config('customers-club.connection_name'))->create('customers_club_levels', function (Blueprint $table) {
             $table->id();
 
             $table->string('title');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers_club_levels');
+        Schema::connection(config('customers-club.connection_name'))->dropIfExists('customers_club_levels');
     }
 };

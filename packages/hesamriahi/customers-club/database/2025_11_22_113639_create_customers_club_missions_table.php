@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers_club_missions', function (Blueprint $table) {
+        Schema::connection(config('customers-club.connection_name'))->create('customers_club_missions', function (Blueprint $table) {
             $table->id();
 
             $table->string('title');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers_club_missions');
+        Schema::connection(config('customers-club.connection_name'))->dropIfExists('customers_club_missions');
     }
 };
