@@ -21,10 +21,10 @@ class CustomersClubServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/config/config.php' => config_path('customers-club.php'),
+            __DIR__ . '/../config/config.php' => config_path('customers-club.php'),
         ], 'customers-club-config');
         $this->publishes([
-            __DIR__ . '/database/migrations' => database_path('migrations'),
+            __DIR__ . '/../database/migrations' => database_path('migrations'),
         ], 'customers-club-migrations');
 
         $this->commands([

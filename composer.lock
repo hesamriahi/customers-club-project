@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c514d8f7b9fc5970bdd94287905ef584",
+    "content-hash": "8d8052b805add89fd4dca6c9b1f8144d",
     "packages": [
         {
             "name": "brick/math",
@@ -1051,6 +1051,40 @@
                 }
             ],
             "time": "2025-08-22T14:27:06+00:00"
+        },
+        {
+            "name": "hesamriahi/customers-club",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/hesamriahi/customers-club",
+                "reference": "e8c80d31f0ee04c04d41d392eae9cc485aa1060e"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hesamriahi\\CustomersClub\\CustomersClubServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hesamriahi\\CustomersClub\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hesam Riahi"
+                }
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "laravel/framework",
@@ -8355,7 +8389,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "hesamriahi/customers-club": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
