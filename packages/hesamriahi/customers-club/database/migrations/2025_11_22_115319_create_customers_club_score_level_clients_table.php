@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
 
             $table->morphs('client');
-            $table->foreignId('level_id')->constrained((new CustomersClubLevel())->getTable());
-            $table->integer('sum_score');
-            $table->integer('sum_bon');
+            $table->foreignId('level_id')->nullable()->constrained((new CustomersClubLevel())->getTable());
+            $table->integer('sum_score')->default(0);
+            $table->integer('sum_bon')->default(0);
 
             $table->timestamps();
         });

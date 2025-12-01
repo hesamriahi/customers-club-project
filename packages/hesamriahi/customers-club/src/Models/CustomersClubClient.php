@@ -2,23 +2,10 @@
 
 namespace Hesamriahi\CustomersClub\Models;
 
-
-abstract class CustomersClubClient
+interface CustomersClubClient
 {
-    public function setScore(CustomersClubMission $mission)
-    {
-
-    }
-
-    public function returnScore(CustomersClubMission $mission)
-    {
-        
-    }
-
-    public function getScore(string $scoreType = null) 
-    {
-
-    }
-
+    public function getScore();
+    public function setScore(string $missionKey);
+    public function returnScore(string $missionKey);
     
 }

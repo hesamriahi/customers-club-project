@@ -30,7 +30,6 @@ class AddNewMission extends Command
         $key = $this->ask('Enter the key of the mission');
         $bonValue = $this->ask('Enter the bon value of the mission', 0);
         $scoreValue = $this->ask('Enter the score value of the mission', 0);
-        $isActive = $this->ask('Enter the is active of the mission', true);
 
         if (CustomersClubMission::where('key', $key)->exists()) {
             $this->error('Mission with key ' . $key . ' already exists');
@@ -42,7 +41,7 @@ class AddNewMission extends Command
             'key' => $key,
             'bon_value' => $bonValue,
             'score_value' => $scoreValue,
-            'is_active' => $isActive,
+            'is_active' => 1,
         ]);
 
         $this->info('Mission added successfully');

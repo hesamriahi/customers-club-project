@@ -16,8 +16,9 @@ return new class extends Migration
 
             $table->string('title');
             $table->integer('min_score');
-            $table->integer('max_score');
+            $table->unsignedInteger('min_bon');
             $table->string('color_code');
+            $table->unsignedInteger('priority')->default(999999);
             $table->string('icon_path')->nullable();
             $table->string('image_path')->nullable();
             
