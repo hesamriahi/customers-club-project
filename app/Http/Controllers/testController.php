@@ -10,6 +10,7 @@ class testController extends Controller
     public function index()
     {
         $user = User::first();
+        dd($user->customersClubDetails);
         $user->setScore('login');
         // $user->returnScore('login');
         dd('DONE');

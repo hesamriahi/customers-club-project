@@ -3,7 +3,9 @@
 namespace Hesamriahi\CustomersClub\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Hesamriahi\CustomersClub\Models\CustomersClubClient;
+use Hesamriahi\CustomersClub\Models\CustomersClubLevel;
 
 /*
 * @property int $client_id
@@ -31,6 +33,11 @@ class CustomersClubScoreLevelClient extends Model
         'sum_score' => 'integer',
         'sum_bon' => 'integer',
     ];
+
+    public function level(): BelongsTo
+    {
+        return $this->belongsTo(CustomersClubLevel::class, 'level_id');
+    }
 
     public static function updateOrCreate(CustomersClubClient $client, $newScore, $newBon)
     {

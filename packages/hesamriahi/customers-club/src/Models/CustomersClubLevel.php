@@ -3,6 +3,8 @@
 namespace Hesamriahi\CustomersClub\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+
 /*
 * @property int $id
 * @property string $title
@@ -50,5 +52,15 @@ class CustomersClubLevel extends Model
                 ->first();
         }
         return $level;
+    }
+
+    public function getImageUrlAttribute()
+    {
+        return Storage::url($this->image_path);
+    }
+
+    public function getIconUrlAttribute()
+    {
+        return Storage::url($this->icon_path);
     }
 }
